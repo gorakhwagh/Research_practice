@@ -1,0 +1,35 @@
+research_task:
+  description: >
+    Research {topic} using web search and relevant source pages. Gather current,
+    accurate findings and include source names, URLs, and publication dates when
+    available. Save useful research notes with the file-writing tool. Return a
+    plain-text evidence report without Markdown formatting.
+  expected_output: >
+    A plain-text research report with sourced findings, key evidence, and
+    clearly identified uncertainties. Do not use Markdown.
+  agent: research_analyst
+
+fact_check_task:
+  description: >
+    Check the research report produced for {topic}. Independently verify its
+    important claims, figures, and technical details using reliable web sources.
+    Remove or qualify unsupported and inaccurate claims. Return concise plain
+    text without Markdown.
+  expected_output: >
+    A concise, fact-checked plain-text research report that distinguishes
+    verified findings from unresolved uncertainty and retains source details.
+  agent: fact_checker
+
+writing_task:
+  description: >
+    Write a professional, easy-to-read final report about {topic} using only
+    the fact-checked research. Use numbered headings, plain paragraphs, and
+    simple text bullets. Do not use Markdown syntax such as emphasis or fenced
+    code blocks. Return the complete report as your final answer. Do not use
+    the file-writing tool to save a separate report; the application returns
+    your final answer directly. Never respond only with a filename or save
+    confirmation.
+  expected_output: >
+    A polished plain-text report with numbered headings and simple bullets,
+    based on the verified research and including source attribution.
+  agent: content_writer
